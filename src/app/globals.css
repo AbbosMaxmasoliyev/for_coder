@@ -18,16 +18,77 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+@layer base {
+  @font-face {
+    font-family: 'Poppins';
+    src: url("../assets/Poppins/Poppins-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: 'Poppins-Light';
+    src: url("../assets/Poppins/Poppins-Light.ttf");
+  }
+
+  @font-face {
+    font-family: 'Poppins-Bold';
+    src: url("../assets/Poppins/Poppins-Bold.ttf");
+  }
+}
+
+.payment_modal {
+  width: 470px;
+
+}
+
+.active::before {
+  content: url("../assets/image/check.svg");
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-position: center;
+
+}
+
+.checked {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  transition: all .15s linear;
+}
+
+.checked::before {
+  content: url("../assets/image/now.svg");
+  display: block;
+  width: 12.5px;
+  height: 8.5px;
+  object-position: center;
+
+}
+
+.line::after {
+  content: "";
+  height: 49px;
+  width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: block;
+}
+
+
+/* iconlar kam bo'lganligi sababli barcha iconlar asosiy css fayl ichida yozildi, ammo ko'payadigan bo'lsa boshqa "icon.css" faylida yozish mumkin */
+
+.icon-x::after{
+  content: url("../assets/image/x.svg");
 }
